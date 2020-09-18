@@ -385,9 +385,9 @@
 
 
     <!-- Validaciones globales del sistema -->
-    @if($empresa <= 0)
+    @if($type <= 0)
       <script type="text/javascript">
-          toastr.warning("POR FAVOR CONFIGURE LOS DATOS DE LA EMPRESA")
+          toastr.warning("POR FAVOR configure por lo menos un tipo de vehiculo")
       </script>
     @endif
     {{-- @if($tipos <= 0)
