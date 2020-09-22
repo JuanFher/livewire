@@ -411,7 +411,16 @@
       </script>
     @endif --}}
      
+<script>
+    window.livewire.on('msgok', msgOK => {
+        toastr.success(msgok, "info")
+    })
 
+    window.livewire.on('msg-error', msgError => {
+        toastr.error(msg-error, "info")
+    })
+
+</script>
 
 </body>
 </html>

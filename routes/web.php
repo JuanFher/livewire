@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('cajones', 'cajones');
 Route::view('tipos', 'types');
+Route::view('movimientos', 'box');
+Route::view('tarifas', 'rates');

@@ -84,8 +84,7 @@
                 </div>
             </div>
             @include('common.search')
-            @include('common.alerts')
-
+            
             <div class="table-responsive">
                 <table class="table table-bordered table-hover table-striped table-checkable table-highlight-head mb-4">
                     <thead>

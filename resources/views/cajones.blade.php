@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
 @section('content')
-	@livewire('drawer-controller')
+	@livewire('drawers-controller')
 @endsection
 

@@ -79,7 +79,10 @@ class TypesController extends Component
     	]);
 
     	if ($this->selected_id > 0) {
-    		$exist = Type::where('description', $this->description)->where('id', '<>', $this->selected_id)->select('description')->get();
+    		$exist = Type::where('description', $this->description)
+                ->where('id', '<>', $this->selected_id)
+                ->select('description')
+                ->get();
     		if ($exist->count() > 0 ) {
     			session()->flash('msg-error', 'Ya existe otro registro con la misma descripción');
     			$this->resetInput();
@@ -88,7 +91,9 @@ class TypesController extends Component
     	}
         else
         {
-                $exist = Type::where('description', $this->description)->select('description')->get();
+                $exist = Type::where('description', $this->description)
+                        ->select('description')
+                        ->get();
             if ($exist->count() > 0 ) {
                 session()->flash('msg-error', 'Ya existe otro registro con la misma descripcion');
                 $this->resetInput();
