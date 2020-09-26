@@ -25,7 +25,7 @@
 			        </div>
 			    </div>
 			    <div class="col-md-2 col-lg-2 col-sm-12 mt-2 mb-2 text-right mr-2">
-			        <button type="button" onclick="openModal()" class="btn btn-dark">
+			        <button type="button" onclick='openModal("{{ $position }}")' class="btn btn-dark">
 			            <i class="la la-file la-lg"></i>
 			        </button>
 			    </div>
@@ -58,7 +58,7 @@
 								<td class="text-center">
 									<ul class="table-controls">
 										<li>
-											<a href="javascript:void(0);" onclick="editRate('{{$r->id}}')" data-toggle="tooltip" data-placement="top" title="Edit">
+											<a href="javascript:void(0);" onclick="editRate('{{$r}}')" data-toggle="tooltip" data-placement="top" title="Edit">
 												<svg
 													xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 text-success">
 													<path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
@@ -116,18 +116,25 @@
 	}
 
 	function editRate(row) {
+		console.log(row)
 		var info = JSON.parse(row)
 		$('#id').val(info.id)
 		$('#cost').val(info.cost)
 		$('#description').val(info.description)
 		$('#time').val(info.time)
+		$('#type').val(info.type_id)
 		$('#position').val(info.position)
 		$('.modal-title').text('Editar Tarifa')
-		$('#modalTarifa').modal('show')
+		$('#modalRate').modal('show')
 	}
 
-	function openModal() {
+	function openModal(position) {
 		$('#id').val(0)
+		$('#cost').val('')
+		$('#description').val('')
+		$('#time').val('Choose')
+		$('#type').val('Choose')
+		$('#position').val(position)
 		$('.modal-title').text('Crear Tarifa')
 		$('#modalRate').modal('show')
 	}

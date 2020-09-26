@@ -90,7 +90,7 @@ class RatesController extends Component
     	$this->description = $record->description;
     	$this->cost = $record->cost;
     	$this->time = $record->time;
-    	$this->type = $record->type->id;
+    	$this->type = $record->type_id;
     	$this->position = $record->position;
     	$this->action = 2;
     }
@@ -130,7 +130,6 @@ class RatesController extends Component
     			'description' => $this->description,
     			'cost' => $this->cost,
     			'position' => $this->position,
-    			'position' => $this->position,
     			'type_id' => $this->type,
     		]);
     	}else{
@@ -139,7 +138,6 @@ class RatesController extends Component
     			'time' => $this->time,
     			'description' => $this->description,
     			'cost' => $this->cost,
-    			'position' => $this->position,
     			'position' => $this->position,
     			'type_id' => $this->type,
     		]);
@@ -158,7 +156,7 @@ class RatesController extends Component
     	}
 
     	$this->resetInput();
-    	$this->position();
+    	$this->getPosition();
     }
 
     protected $listeners = [
@@ -175,7 +173,7 @@ class RatesController extends Component
     	$this->cost = $data->cost;
     	$this->description = $data->description;
     	$this->position = $data->position;
-        console.log('estabien');
+        
     	$this->storeOrUpdate();
     }
 
